@@ -1,0 +1,61 @@
+
+$background-dark-blue: rgb(33, 33, 52);
+$background-light-blue: rgb(50, 50, 77);
+$button-blue: rgb(73, 69, 255);
+$purple:rgb(123, 121, 255);
+$header-height: 100px;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*{
+  box-sizing: border-box;
+}
+.App{
+  background-color:$background-dark-blue;
+}
+
+.site-header{
+  height:$header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 35px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  position:sticky;
+  top:0;
+  z-index:100;
+  background-color:$purple;
+  a{
+    text-decoration: none;
+  }
+  h1{
+    color:white;
+    list-style: none;
+    text-decoration: none;
+    margin:0;
+    &:hover{
+      color:$purple;
+    }
+  }
+
+  h3{
+    color:white;
+    cursor: pointer;
+    &:hover{
+      color:$purple;
+    }
+  }
+}
+

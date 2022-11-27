@@ -1,0 +1,136 @@
+@import '../index.scss';
+
+.homepage-container{
+    width:100%;
+    min-height:calc(100vh - $header-height - 1px);
+    // padding:0 35px;
+    box-sizing: border-box;
+    display:grid;
+    grid-template-rows:25% 75%;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: "sidebar generator" "sidebar dashboard";
+    max-height:calc(100vh - $header-height);
+    overflow:hidden;
+    position:relative;
+
+    .sidebar{
+        width:100%;
+        height:100%;
+        border-right:1px solid $purple;
+        padding:15px 20px;
+        grid-area:sidebar;
+    }
+
+    .generator{
+        height:100%;
+        min-height:250px;
+        max-height:100%;
+    }
+    .dashboard{
+        width:100%;
+        height:100%;
+        padding:15px 20px;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap:25px;
+        align-items: center;
+        position:relative;
+        grid-area:dashboard;
+        height:100%;
+        max-height:100%;
+        overflow-x:hidden;
+        overflow-y:auto;
+
+        button{
+            position: absolute;
+            bottom:15px;
+            right:0;
+            left:0;
+            margin: auto;
+            max-width: 25%;
+        }
+
+        .expense-table-container{
+            width:100%;
+            height:max-content;
+            border-radius:10px;
+            background-color:$background-light-blue;
+            
+            table{
+                border-collapse: collapse;
+            }
+
+            th,td{
+                color:white;
+                text-align: center;
+
+            }
+
+            .table-row{
+                border-top:1px solid rgba($purple,.2);
+            }
+
+            .header-row,.footer-row{
+                th,td{
+                    color: $purple;
+                    height:50px;
+                }
+            }
+            .header-row{
+                border-bottom:1px solid rgba($purple,.5);
+                background-color: rgba($background-dark-blue,.5);
+                .title-column{
+                    background-color:$purple;
+                    color:white;
+                    font-size:20px;
+                    border-radius:10px 0 0 0;
+                    font-style:italic;
+                }
+            }
+            .footer-row{
+                .total-cell{
+                    background-color:$purple;
+                    color:white;
+                    font-size:20px;
+                    border-radius:0 0 10px 0;
+                    font-style: italic;
+                }
+            }
+
+            tr.footer-row{
+                border-top:1px solid rgba($purple,.5);
+                background-color: rgba($background-dark-blue,.5);
+            }
+            
+            tr:not(.header-row,.footer-row){
+                border-bottom:1px solid rgba($purple,.2)
+            }
+            .expenses-table-body tr:last-child{
+                border-bottom:none;
+            }
+
+            .title-column:not(.header-row .title-column){
+                text-align: left;
+                line-height:50px;
+                border-right:1px solid rgba($purple,.2);
+                padding:0 0 0 10px;
+                background-color: rgba($background-dark-blue,.5);
+            }
+
+            .total-column{
+                background-color: rgba($background-dark-blue,.5);
+            }
+
+
+        }
+    }
+
+    h1{
+        margin:0;
+    }
+
+    .generator-container{
+        
+    }
+}
